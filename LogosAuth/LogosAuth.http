@@ -1,0 +1,6 @@
+@LogosAuth_HostAddress = http://localhost:5081
+
+GET {{LogosAuth_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
