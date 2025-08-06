@@ -1,4 +1,5 @@
 using LogosAuth.Data;
+using LogosAuth.Services;
 using Microsoft.EntityFrameworkCore;
 using Scalar.AspNetCore;
 
@@ -11,6 +12,8 @@ builder.Services.AddControllers();
 builder.Services.AddOpenApi();
 
 builder.Services.AddDbContext<UserDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("User Database")));
+
+builder.Services.AddScoped<IAuthService,AuthService>();
 
 var app = builder.Build();
 
